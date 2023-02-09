@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "name": "expo-nx",
+  "version": "0.0.1",
+  "generators": {
+    "expo-nx": {
+      "factory": "./src/generators/expo-nx/generator",
+      "schema": "./src/generators/expo-nx/schema.json",
+      "description": "expo-nx generator"
+    }
+  }
+}

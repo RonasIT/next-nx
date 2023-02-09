@@ -15,7 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@ronas-it/next-nx": ["packages/next-nx/src/index.ts"]
+      "@ronas-it/expo-nx": ["packages/expo-nx/src/index.ts"],
+      "@ronas-it/next-nx": ["packages/next-nx/src/index.ts"],
+      "@ronas-it/react-nx": ["packages/react-nx/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

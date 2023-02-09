@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "name": "react-nx",
+  "version": "0.0.1",
+  "generators": {
+    "react-nx": {
+      "factory": "./src/generators/react-nx/generator",
+      "schema": "./src/generators/react-nx/schema.json",
+      "description": "react-nx generator"
+    }
+  }
+}
