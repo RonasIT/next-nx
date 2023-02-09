@@ -3,10 +3,10 @@
   "name": "next-nx",
   "version": "0.0.1",
   "generators": {
-    "next-nx": {
-      "factory": "./src/generators/next-nx/generator",
-      "schema": "./src/generators/next-nx/schema.json",
-      "description": "next-nx generator"
+    "preset": {
+      "factory": "./src/generators/preset/generator",
+      "schema": "./src/generators/preset/schema.json",
+      "description": "preset generator"
     }
   }
 }
