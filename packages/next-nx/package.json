@@ -6,5 +6,8 @@
   "executors": "./executors.json",
   "dependencies": {
     "@nrwl/next": "^15.6.3"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
