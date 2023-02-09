@@ -3,10 +3,15 @@
   "name": "react-nx",
   "version": "0.0.1",
   "generators": {
-    "react-nx": {
-      "factory": "./src/generators/react-nx/generator",
-      "schema": "./src/generators/react-nx/schema.json",
-      "description": "react-nx generator"
+    "preset": {
+      "factory": "./src/generators/preset/generator",
+      "schema": "./src/generators/preset/schema.json",
+      "description": "preset generator"
+    },
+    "application": {
+      "factory": "./src/generators/application/generator",
+      "schema": "./src/generators/application/schema.json",
+      "description": "application generator"
     }
   }
 }

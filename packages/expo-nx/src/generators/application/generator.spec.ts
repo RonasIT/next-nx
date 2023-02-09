@@ -2,11 +2,11 @@ import { createTreeWithEmptyWorkspace } from '@nrwl/devkit/testing';
 import { Tree, readProjectConfiguration } from '@nrwl/devkit';
 
 import generator from './generator';
-import { ReactNxGeneratorSchema } from './schema';
+import { ApplicationGeneratorSchema } from './schema';
 
-describe('react-nx generator', () => {
+describe('application generator', () => {
   let appTree: Tree;
-  const options: ReactNxGeneratorSchema = { name: 'test' };
+  const options: ApplicationGeneratorSchema = { name: 'test' };
 
   beforeEach(() => {
     appTree = createTreeWithEmptyWorkspace();
