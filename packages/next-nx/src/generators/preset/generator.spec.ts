@@ -1,5 +1,5 @@
 import { createTreeWithEmptyWorkspace } from '@nrwl/devkit/testing';
-import { Tree, readProjectConfiguration } from '@nrwl/devkit';
+import { Tree } from '@nrwl/devkit';
 
 import generator from './generator';
 import { PresetGeneratorSchema } from './schema';
@@ -14,7 +14,8 @@ describe('preset generator', () => {
 
   it('should run successfully', async () => {
     await generator(appTree, options);
-    const config = readProjectConfiguration(appTree, 'test');
-    expect(config).toBeDefined();
+
+    expect(appTree.exists('.prettierrc')).toBeFalsy();
+    expect(appTree.exists('.prettierrc.js')).toBeTruthy();
   });
 });

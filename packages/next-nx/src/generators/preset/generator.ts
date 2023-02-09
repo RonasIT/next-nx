@@ -1,9 +1,23 @@
-import { Tree } from '@nrwl/devkit';
+import { formatFiles, generateFiles, Tree } from "@nrwl/devkit";
 import { PresetGeneratorSchema } from './schema';
+import { join } from 'path';
+
+function addFiles(tree) {
+  generateFiles(tree, join(__dirname, 'files'), '.', {
+    template: ''
+  });
+}
+
+function deleteDefaultPrettierConfig(tree: Tree) {
+  tree.delete('.prettierrc');
+}
 
 export default async function (
   tree: Tree,
   options: PresetGeneratorSchema
 ) {
-  console.log('This is test of the preset');
+  deleteDefaultPrettierConfig(tree);
+  addFiles(tree);
+
+  await formatFiles(tree);
 }
