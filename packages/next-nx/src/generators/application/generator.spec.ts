@@ -6,7 +6,7 @@ import { ApplicationGeneratorSchema } from './schema';
 
 describe('application generator', () => {
   let appTree: Tree;
-  const options: ApplicationGeneratorSchema = { name: 'test' };
+  const options: ApplicationGeneratorSchema = { name: 'test', style: 'scss' };
 
   beforeEach(() => {
     appTree = createTreeWithEmptyWorkspace();

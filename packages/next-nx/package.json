@@ -1,7 +1,10 @@
 {
   "name": "@ronas-it/next-nx",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "src/index.js",
   "generators": "./generators.json",
-  "executors": "./executors.json"
+  "executors": "./executors.json",
+  "dependencies": {
+    "@nrwl/next": "^15.6.3"
+  }
 }
