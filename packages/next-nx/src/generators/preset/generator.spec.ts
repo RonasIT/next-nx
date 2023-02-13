@@ -1,5 +1,5 @@
 import { createTreeWithEmptyWorkspace } from '@nrwl/devkit/testing';
-import { readProjectConfiguration, Tree } from "@nrwl/devkit";
+import { readProjectConfiguration, Tree, readJson } from "@nrwl/devkit";
 
 import generator from './generator';
 import { PresetGeneratorSchema } from './schema';
@@ -30,5 +30,15 @@ describe('preset generator', () => {
 
     expect(appTree.exists('.prettierrc')).toBeFalsy();
     expect(appTree.exists('.prettierrc.js')).toBeTruthy();
+  });
+
+  it('should replace eslint config and install necessary dependencies', async () => {
+    await generator(appTree, options);
+
+    const eslintrcJson = readJson(appTree, '.eslintrc.json');
+    expect(eslintrcJson.root).toBeTruthy();
+
+    const packageJson = readJson(appTree, 'package.json');
+    expect(packageJson.devDependencies).toHaveProperty('eslint-plugin-unused-imports');
   });
 });
