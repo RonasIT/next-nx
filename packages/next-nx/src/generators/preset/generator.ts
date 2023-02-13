@@ -1,4 +1,4 @@
-import { formatFiles, generateFiles, Tree } from '@nrwl/devkit';
+import { formatFiles, generateFiles, Tree, installPackagesTask } from '@nrwl/devkit';
 import { PresetGeneratorSchema } from './schema';
 import { join } from 'path';
 import applicationGenerator from '../application/generator';
@@ -23,4 +23,8 @@ export default async function (
   await applicationGenerator(tree, options);
 
   await formatFiles(tree);
+
+  return () => {
+    installPackagesTask(tree);
+  };
 }
