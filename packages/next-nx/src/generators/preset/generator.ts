@@ -20,7 +20,7 @@ export default async function (
   deleteDefaultPrettierConfig(tree);
   addFiles(tree);
 
-  await formatFiles(tree);
+  await applicationGenerator(tree, options);
 
-  return applicationGenerator(tree, options);
+  await formatFiles(tree);
 }
