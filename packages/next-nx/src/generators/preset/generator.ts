@@ -34,13 +34,13 @@ export default async function (tree: Tree, options: PresetGeneratorSchema) {
 
   deleteDefaultPrettierConfig(tree);
 
-  tasks.push(addEslintRules(tree));
-
   addFiles(tree);
 
   await applicationGenerator(tree, options);
 
   await formatFiles(tree);
+
+  tasks.push(addEslintRules(tree));
 
   return () => {
     installPackagesTask(tree);
