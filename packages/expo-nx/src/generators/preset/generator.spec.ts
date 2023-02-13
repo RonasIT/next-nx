@@ -1,18 +1,18 @@
-import { createTreeWithEmptyWorkspace } from "@nrwl/devkit/testing";
-import { Tree } from "@nrwl/devkit";
+import { createTreeWithEmptyWorkspace } from '@nrwl/devkit/testing';
+import { Tree } from '@nrwl/devkit';
 
-import generator from "./generator";
-import { PresetGeneratorSchema } from "./schema";
-import { Linter } from "@nrwl/linter";
+import generator from './generator';
+import { PresetGeneratorSchema } from './schema';
+import { Linter } from '@nrwl/linter';
 
-describe("preset generator", () => {
+describe('preset generator', () => {
   let appTree: Tree;
   const options: PresetGeneratorSchema = {
-    name: "test",
+    name: 'test',
     skipFormat: false,
-    unitTestRunner: "jest",
+    unitTestRunner: 'jest',
     linter: Linter.EsLint,
-    e2eTestRunner: "detox",
+    e2eTestRunner: 'detox',
     js: false
   };
 
@@ -20,7 +20,7 @@ describe("preset generator", () => {
     appTree = createTreeWithEmptyWorkspace();
   });
 
-  it("should run successfully", async () => {
+  it('should run successfully', async () => {
     await generator(appTree, options);
 
     expect(appTree.exists('.prettierrc')).toBeFalsy();

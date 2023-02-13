@@ -2,3 +2,6 @@
 
 /dist
 /coverage
+**/*__template__
+/.husky
+/.vscode

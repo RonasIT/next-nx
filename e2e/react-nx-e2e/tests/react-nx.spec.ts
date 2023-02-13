@@ -1,10 +1,4 @@
-import {
-  checkFilesExist,
-  ensureNxProject,
-  readJson,
-  runNxCommandAsync,
-  uniq,
-} from '@nrwl/nx-plugin/testing';
+import { checkFilesExist, ensureNxProject, readJson, runNxCommandAsync, uniq } from '@nrwl/nx-plugin/testing';
 
 describe('react-nx e2e', () => {
   // Setting up individual workspaces per
@@ -33,12 +27,8 @@ describe('react-nx e2e', () => {
   describe('--directory', () => {
     it('should create src in the specified directory', async () => {
       const project = uniq('react-nx');
-      await runNxCommandAsync(
-        `generate @ronas-it/react-nx:react-nx ${project} --directory subdir`
-      );
-      expect(() =>
-        checkFilesExist(`libs/subdir/${project}/src/index.ts`)
-      ).not.toThrow();
+      await runNxCommandAsync(`generate @ronas-it/react-nx:react-nx ${project} --directory subdir`);
+      expect(() => checkFilesExist(`libs/subdir/${project}/src/index.ts`)).not.toThrow();
     }, 120000);
   });
 
@@ -46,9 +36,7 @@ describe('react-nx e2e', () => {
     it('should add tags to the project', async () => {
       const projectName = uniq('react-nx');
       ensureNxProject('@ronas-it/react-nx', 'dist/packages/react-nx');
-      await runNxCommandAsync(
-        `generate @ronas-it/react-nx:react-nx ${projectName} --tags e2etag,e2ePackage`
-      );
+      await runNxCommandAsync(`generate @ronas-it/react-nx:react-nx ${projectName} --tags e2etag,e2ePackage`);
       const project = readJson(`libs/${projectName}/project.json`);
       expect(project.tags).toEqual(['e2etag', 'e2ePackage']);
     }, 120000);

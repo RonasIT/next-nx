@@ -1,3 +1,1 @@
-export interface PresetGeneratorSchema {
-
-}
+export interface PresetGeneratorSchema {}

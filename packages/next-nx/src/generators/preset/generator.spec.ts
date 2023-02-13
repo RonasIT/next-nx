@@ -1,5 +1,5 @@
 import { createTreeWithEmptyWorkspace } from '@nrwl/devkit/testing';
-import { readProjectConfiguration, Tree, readJson } from "@nrwl/devkit";
+import { readProjectConfiguration, Tree, readJson } from '@nrwl/devkit';
 
 import generator from './generator';
 import { PresetGeneratorSchema } from './schema';

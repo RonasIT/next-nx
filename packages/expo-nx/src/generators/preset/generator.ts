@@ -13,10 +13,7 @@ function deleteDefaultPrettierConfig(tree: Tree) {
   tree.delete('.prettierrc');
 }
 
-export default async function (
-  tree: Tree,
-  options: PresetGeneratorSchema
-) {
+export default async function (tree: Tree, options: PresetGeneratorSchema) {
   deleteDefaultPrettierConfig(tree);
   addFiles(tree);
 

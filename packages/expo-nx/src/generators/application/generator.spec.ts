@@ -3,16 +3,16 @@ import { Tree, readProjectConfiguration } from '@nrwl/devkit';
 
 import generator from './generator';
 import { ApplicationGeneratorSchema } from './schema';
-import { Linter } from "@nrwl/linter";
+import { Linter } from '@nrwl/linter';
 
 describe('application generator', () => {
   let appTree: Tree;
   const options: ApplicationGeneratorSchema = {
-    name: "test",
+    name: 'test',
     skipFormat: false,
-    unitTestRunner: "jest",
+    unitTestRunner: 'jest',
     linter: Linter.EsLint,
-    e2eTestRunner: "detox",
+    e2eTestRunner: 'detox',
     js: false
   };
 

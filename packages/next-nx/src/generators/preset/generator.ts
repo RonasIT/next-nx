@@ -5,11 +5,11 @@ import {
   installPackagesTask,
   addDependenciesToPackageJson,
   GeneratorCallback
-} from "@nrwl/devkit";
+} from '@nrwl/devkit';
 import { PresetGeneratorSchema } from './schema';
 import { join } from 'path';
 import applicationGenerator from '../application/generator';
-import { runTasksInSerial } from "@nrwl/workspace/src/utilities/run-tasks-in-serial";
+import { runTasksInSerial } from '@nrwl/workspace/src/utilities/run-tasks-in-serial';
 
 function addFiles(tree) {
   generateFiles(tree, join(__dirname, 'files'), '.', {
@@ -29,10 +29,7 @@ function addEslintRules(tree: Tree) {
   return addDependenciesToPackageJson(tree, {}, devDependencies);
 }
 
-export default async function (
-  tree: Tree,
-  options: PresetGeneratorSchema
-) {
+export default async function (tree: Tree, options: PresetGeneratorSchema) {
   const tasks: GeneratorCallback[] = [];
 
   deleteDefaultPrettierConfig(tree);
