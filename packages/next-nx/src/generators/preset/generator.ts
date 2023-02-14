@@ -4,7 +4,8 @@ import {
   Tree,
   installPackagesTask,
   addDependenciesToPackageJson,
-  GeneratorCallback
+  GeneratorCallback,
+  updateJson
 } from '@nrwl/devkit';
 import { PresetGeneratorSchema } from './schema';
 import { join } from 'path';
@@ -21,12 +22,27 @@ function deleteDefaultPrettierConfig(tree: Tree) {
   tree.delete('.prettierrc');
 }
 
-function addEslintRules(tree: Tree) {
+function addDependencies(tree: Tree) {
   const devDependencies = {
     'eslint-plugin-unused-imports': '^2.0.0'
   };
 
   return addDependenciesToPackageJson(tree, {}, devDependencies);
+}
+
+function addScriptsToPackageJson(tree: Tree) {
+  updateJson(tree, 'package.json', (packageJson) => {
+    packageJson.scripts = {
+      start: 'nx serve',
+      build: 'nx build',
+      test: 'nx test',
+      e2e: 'nx e2e forum-e2e --watch',
+      lint: 'eslint --ext .ts,.tsx ./',
+      format: 'nx format && npm run lint -- --fix'
+    };
+
+    return packageJson;
+  });
 }
 
 export default async function (tree: Tree, options: PresetGeneratorSchema) {
@@ -40,7 +56,9 @@ export default async function (tree: Tree, options: PresetGeneratorSchema) {
 
   await formatFiles(tree);
 
-  tasks.push(addEslintRules(tree));
+  addScriptsToPackageJson(tree);
+
+  tasks.push(addDependencies(tree));
 
   return () => {
     installPackagesTask(tree);

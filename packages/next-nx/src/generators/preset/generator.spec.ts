@@ -41,4 +41,18 @@ describe('preset generator', () => {
     const packageJson = readJson(appTree, 'package.json');
     expect(packageJson.devDependencies).toHaveProperty('eslint-plugin-unused-imports');
   });
+
+  it('should update scripts in package.json', async () => {
+    await generator(appTree, options);
+
+    const packageJson = readJson(appTree, 'package.json');
+    expect(packageJson.scripts).toEqual({
+      start: 'nx serve',
+      build: 'nx build',
+      test: 'nx test',
+      e2e: 'nx e2e forum-e2e --watch',
+      lint: 'eslint --ext .ts,.tsx ./',
+      format: 'nx format && npm run lint -- --fix'
+    });
+  });
 });
