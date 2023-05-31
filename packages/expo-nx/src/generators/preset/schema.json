@@ -1,6 +1,5 @@
 {
   "$schema": "http://json-schema.org/schema",
-  "cli": "nx",
   "$id": "Preset",
   "title": "",
   "type": "object",
@@ -32,12 +31,17 @@
     "linter": {
       "description": "The tool to use for running lint checks.",
       "type": "string",
-      "enum": ["eslint"],
+      "enum": [
+        "eslint"
+      ],
       "default": "eslint"
     },
     "unitTestRunner": {
       "type": "string",
-      "enum": ["jest", "none"],
+      "enum": [
+        "jest",
+        "none"
+      ],
       "description": "Test runner to use for unit tests",
       "default": "jest"
     },
@@ -59,7 +63,10 @@
     "e2eTestRunner": {
       "description": "Adds the specified e2e test runner",
       "type": "string",
-      "enum": ["detox", "none"],
+      "enum": [
+        "detox",
+        "none"
+      ],
       "default": "detox"
     },
     "standaloneConfig": {
@@ -67,5 +74,7 @@
       "type": "boolean"
     }
   },
-  "required": ["name"]
+  "required": [
+    "name"
+  ]
 }

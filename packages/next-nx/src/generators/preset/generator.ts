@@ -6,11 +6,11 @@ import {
   addDependenciesToPackageJson,
   GeneratorCallback,
   updateJson
-} from '@nrwl/devkit';
+} from '@nx/devkit';
 import { PresetGeneratorSchema } from './schema';
 import { join } from 'path';
 import applicationGenerator from '../application/generator';
-import { runTasksInSerial } from '@nrwl/workspace/src/utilities/run-tasks-in-serial';
+import { runTasksInSerial } from '@nx/workspace/src/utilities/run-tasks-in-serial';
 
 function addFiles(tree) {
   generateFiles(tree, join(__dirname, 'files'), '.', {

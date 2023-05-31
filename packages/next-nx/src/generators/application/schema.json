@@ -1,6 +1,5 @@
 {
   "$schema": "http://json-schema.org/schema",
-  "cli": "nx",
   "$id": "Application",
   "title": "",
   "type": "object",
@@ -31,7 +30,10 @@
         "message": "Which stylesheet format would you like to use?",
         "type": "list",
         "items": [
-          { "value": "css", "label": "CSS" },
+          {
+            "value": "css",
+            "label": "CSS"
+          },
           {
             "value": "scss",
             "label": "SASS(.scss)       [ http://sass-lang.com          ]"
@@ -66,7 +68,9 @@
     "linter": {
       "description": "The tool to use for running lint checks.",
       "type": "string",
-      "enum": ["eslint"],
+      "enum": [
+        "eslint"
+      ],
       "default": "eslint"
     },
     "skipFormat": {
@@ -83,13 +87,19 @@
     },
     "unitTestRunner": {
       "type": "string",
-      "enum": ["jest", "none"],
+      "enum": [
+        "jest",
+        "none"
+      ],
       "description": "Test runner to use for unit tests.",
       "default": "jest"
     },
     "e2eTestRunner": {
       "type": "string",
-      "enum": ["cypress", "none"],
+      "enum": [
+        "cypress",
+        "none"
+      ],
       "description": "Test runner to use for end to end (E2E) tests.",
       "default": "cypress"
     },
@@ -123,5 +133,7 @@
       "default": false
     }
   },
-  "required": ["name"]
+  "required": [
+    "name"
+  ]
 }

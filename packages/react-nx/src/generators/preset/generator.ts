@@ -1,4 +1,4 @@
-import { formatFiles, generateFiles, Tree } from '@nrwl/devkit';
+import { formatFiles, generateFiles, Tree } from '@nx/devkit';
 import { PresetGeneratorSchema } from './schema';
 import { join } from 'path';
 

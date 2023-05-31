@@ -6,7 +6,7 @@ import {
   names,
   offsetFromRoot,
   Tree
-} from '@nrwl/devkit';
+} from '@nx/devkit';
 import { join } from 'path';
 import { ApplicationGeneratorSchema } from './schema';
 
