@@ -1,5 +1,4 @@
 import { formatFiles, generateFiles, Tree } from '@nx/devkit';
-import { PresetGeneratorSchema } from './schema';
 import { join } from 'path';
 
 function addFiles(tree) {
@@ -12,7 +11,7 @@ function deleteDefaultPrettierConfig(tree: Tree) {
   tree.delete('.prettierrc');
 }
 
-export default async function (tree: Tree, options: PresetGeneratorSchema) {
+export default async function (tree: Tree) {
   deleteDefaultPrettierConfig(tree);
   addFiles(tree);
 
