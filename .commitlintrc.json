@@ -1,3 +1,18 @@
 {
-  "extends": ["@commitlint/config-conventional"]
+  "extends": [
+    "@commitlint/config-conventional"
+  ],
+  "rules": {
+    "footer-max-line-length": [
+      0,
+      "always"
+    ]
+  },
+  "parserPreset": {
+    "parserOpts": {
+      "noteKeywords": [
+        "refs:"
+      ]
+    }
+  }
 }

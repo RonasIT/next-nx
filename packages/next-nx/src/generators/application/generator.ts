@@ -1,4 +1,4 @@
-import { getWorkspaceLayout, Tree } from '@nrwl/devkit';
+import { Tree } from '@nx/devkit';
 import { ApplicationGeneratorSchema } from './schema';
 import { applicationGenerator } from '@nrwl/next';
 
